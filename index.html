@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+
+<body>
+    <h1>Cookie</h1>
+
+    <Button onclick="addCookie()">Add Cookie</Button>
+    <Button onclick="remoceCookie()">Remove Cookie</Button>
+    <!-- <Button id="btn" onclick="bgGenerator()">Random Bg Generator</Button> -->
+    <Button id="btn2">Stop</Button>
+
+
+</body>
+<script>
+    // document.cookie = "username=John Doe"    
+    function addCookie() {
+        document.cookie = "username=John Doe; expires=fri, 6 Sep 2024 12:35:00 UTC";
+        alert("Cookie added successfully")
+    }
+
+    function remoceCookie() {
+        cookieStore.delete('username');
+        alert("Cookie removed successfully")
+    }
+
+    // function bgGenerator() {
+    const myInterval = setInterval(() => {
+        let btn = document.getElementById('btn');
+        var randomColor = '#' + Math.floor(Math.random() * 16789215).toString(16);
+        console.log(randomColor);
+        document.body.style.backgroundColor = randomColor;
+
+    }, 1000);
+    // }
+
+    let btn2 = document.getElementById('btn2');
+
+    btn2.addEventListener('click', function () {
+        clearInterval(myInterval);
+    });
+
+
+
+
+</script>
+
+</html>
